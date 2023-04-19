@@ -17,5 +17,7 @@ public void save(Cliente cliente);
 
 public void delete(Cliente cliente);
 
+public List<Cliente> getClientePorNombre(String nombre);
+
 }
 

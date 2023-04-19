@@ -53,4 +53,15 @@ public class ClienteController {
          return "redirect:/cliente/listado";
      }
     
+     @GetMapping("/cliente/buscar")
+     public String buscar(Cliente cliente) {
+         return "/cliente/buscarCliente";
+     }
+     
+     @PostMapping("/cliente/buscar")
+     public String busqueda(Cliente cliente, Model model){
+         var clientes =clienteService.getClientePorNombre(cliente.getNombre());
+         model.addAttribute("resultados", clientes);
+         return "/cliente/buscarCliente";
+     }
 }
